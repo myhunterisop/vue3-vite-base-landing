@@ -1,0 +1,24 @@
+{
+  "name": "employ-city-test",
+  "private": true,
+  "version": "0.0.0",
+  "type": "module",
+  "scripts": {
+    "dev": "vite",
+    "build": "vite build",
+    "preview": "vite preview"
+  },
+  "dependencies": {
+    "input-range-scss": "^1.5.3",
+    "throttle-debounce": "^5.0.0",
+    "vue": "^3.2.47"
+  },
+  "devDependencies": {
+    "@vitejs/plugin-vue": "^4.1.0",
+    "sass": "^1.62.0",
+    "sharp": "^0.32.1",
+    "svgo": "^3.0.2",
+    "vite": "^4.3.9",
+    "vite-plugin-image-optimizer": "^1.1.4"
+  }
+}

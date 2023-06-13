@@ -1,0 +1,113 @@
+body {
+    display: flex;
+    flex-direction: column;
+    margin: 0;
+
+    min-height: 100vh;
+    min-width: 320px;
+    width: 100%;
+    color: var(--text-color);
+    background: var(--color-background);
+    line-height: 1.2;
+    font-size: 20px;
+    text-rendering: optimizeLegibility;
+    font-family: var(--primaryFont), sans-serif;
+}
+
+.link {
+    color: var(--text-color);
+    transition: color var(--transition);
+    text-decoration: none;
+
+    &:hover {
+        color: var(--brand-color);
+    }
+}
+
+li {
+    &:before {
+        content: '-';
+        display: inline-block;
+        width: 20px;
+        height: 100%;
+        text-align: center;
+    }
+
+    & + & {
+        margin-top: 8px;
+    }
+}
+
+h1 {
+    font-size: 48px;
+    font-weight: 700;
+}
+
+h2 {
+    font-size: 36px;
+    font-weight: 600;
+}
+
+[type=range] {
+    appearance: none;
+    background: transparent;
+    margin: 19px 0;
+    width: 100%;
+
+    &::-moz-focus-outer {
+        border: 0;
+    }
+
+    &::-webkit-slider-runnable-track {
+        cursor: default;
+        height: 6px;
+        transition: all var(--transition);
+        width: 100%;
+        border: 1px solid var(--white);
+        background: rgba(255, 255, 255, 0.7);
+        border-radius: 10px;
+    }
+
+    &::-webkit-slider-thumb {
+        background: #42A9ED;
+        border: 3px solid #286690;
+        border-radius: 50%;
+        box-sizing: border-box;
+        cursor: default;
+        height: 24px;
+        width: 24px;
+        -webkit-appearance: none;
+        margin-top: -10px;
+    }
+
+    &:disabled {
+        &::-webkit-slider-thumb,
+        &::-webkit-slider-runnable-track {
+            cursor: not-allowed;
+        }
+    }
+}
+
+.button,
+button {
+    background-color: var(--white);
+    border: 1px solid #6F6D7B;
+    border-radius: 4px;
+    color: #2A2B30;
+    transition: all var(--transition);
+    padding: 15px 31px;
+    text-transform: uppercase;
+    font-size: 13px;
+
+    &:hover,
+    &:focus {
+        box-shadow: 0 0.5em 0.5em -0.4em var(--brand-color);
+        transform: translateY(-0.25em);
+    }
+
+    &--accent {
+        color: var(--white);
+        background-color: var(--brand-color);
+        border-color: var(--white);
+    }
+}
