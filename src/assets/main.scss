@@ -3,6 +3,7 @@
 @import './styles/vars.scss';
 @import './styles/fonts.scss';
 @import './styles/utilities.scss';
+@import './styles/keyframes.scss';
 
 #app {
     min-height: 100%;
@@ -20,13 +21,6 @@ html {
     max-width: var(--site-width);
     margin-left: auto;
     margin-right: auto;
-    padding-right: var(--token-grids-desktop-offset);
-    padding-left: var(--token-grids-desktop-offset);
-
-    @media screen and (max-width: $breakpoint-laptop) {
-        padding-right: var(--token-grids-laptop-offset);
-        padding-left: var(--token-grids-laptop-offset);
-    }
 
     @media screen and (max-width: $breakpoint-tablet) {
         padding-right: var(--token-grids-tablet-offset);

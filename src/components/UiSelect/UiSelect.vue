@@ -9,7 +9,12 @@
     >
         <div class="ui-select__container" @click="toggleDropdown">
             <span class="ui-select__option ui-select__option--selected">{{ selectedOption ? selectedOption.text : placeholder }}</span>
-            <img class="ui-select__arrow" src="/icons/arrow.svg" />
+            <ui-icon
+                class="ui-select__arrow"
+                width="55"
+                height="55"
+                name="arrow"
+            />
         </div>
         <div class="ui-select__dropdown" v-if="isDropdownVisible">
             <ul class="ui-select__options">
@@ -28,6 +33,7 @@
 
 <script setup>
 import { ref, onMounted, onUnmounted } from 'vue'
+import UiIcon from '@/components/UiIcon/UiIcon.vue'
 
 defineProps({
     placeholder: {
@@ -98,6 +104,10 @@ onUnmounted(() => {
         &:focus {
             background: #3D4050;
             color: var(--text-color);
+
+            path {
+                fill: var(--white) !important;
+            }
         }
     }
 
@@ -106,17 +116,22 @@ onUnmounted(() => {
         height: 20px;
         margin: 10px;
         transition: transform var(--transition);
+
+        path {
+            fill: var(--black);
+        }
     }
 
     &__dropdown {
         position: absolute;
         top: 100%;
         width: 100%;
-        background: rgba(39, 39, 51, 0.9);
+        background: rgba(39, 39, 51, 0.98);
         border: 1px solid #3D4050;
         padding: 6px 4px;
         border-bottom-left-radius: var(--border-radius);
         border-bottom-right-radius: var(--border-radius);
+        z-index: 2;
     }
 
     &__options {
@@ -142,6 +157,9 @@ onUnmounted(() => {
         text-align: left;
         cursor: pointer;
         font-size: 18px;
+        text-overflow: ellipsis;
+        overflow: hidden;
+        white-space: nowrap;
 
         & + & {
             margin-top: 0;
@@ -171,6 +189,10 @@ onUnmounted(() => {
             border-color: rgba(61, 64, 80, 0.85);
             border-bottom-left-radius: 0;
             border-bottom-right-radius: 0;
+
+            path {
+                fill: var(--white) !important;
+            }
         }
 
         #{$parent}__arrow {

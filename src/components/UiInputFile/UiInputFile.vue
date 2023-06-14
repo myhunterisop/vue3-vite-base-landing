@@ -8,9 +8,9 @@
             @change="handleFileChange"
         />
         <button
+            type="button"
             class="ui-input-file__button"
             @click="openFilePicker"
-            v-if="!selectedFile"
         >Выбрать файл</button>
         <p
             v-if="selectedFile"
@@ -26,6 +26,7 @@ const fileInput = ref(null);
 const selectedFile = ref(null);
 
 const openFilePicker = () => {
+    console.log(fileInput.value);
     fileInput.value.click();
 }
 

@@ -1,5 +1,5 @@
 <template>
-    <form class="form">
+    <form class="form" @submit.prevent="send">
         <div class="form__wrapper">
             <div class="form__item">
                 <ui-select
@@ -39,17 +39,17 @@
                     name="email"
                     type="email"
                     placeholder="Ваш e-mail *"
-                    required 
+                    required
                 />
             </div>
             <div class="form__item">
                 <ui-input
                     name="name"
                     placeholder="Ваше имя *"
-                    required 
+                    required
                 />
             </div>
-            <div class="form__item form-range">
+            <div class="form__item form__item--range">
                 <ui-range
                     name="range"
                     min="0"
@@ -61,7 +61,7 @@
                 <ui-input-file name="file" />
             </div>
         </div>
-        <button @click="send" type="submit" class="form__submit button button--accent">Отправить</button>
+        <button type="submit" class="form__submit button button--accent">Отправить</button>
     </form>
 </template>
 
@@ -73,13 +73,12 @@ import UiInputFile from '@/components/UiInputFile/UiInputFile.vue'
 import {throttle} from 'throttle-debounce'
 
 const send = throttle(500, function () {
-    fetch(`/api/vacancies/${window.location.search}`)
+    fetch(`/api/test/${window.location.search}`)
         .then((response) => {
             if (response.status >= 200 && response.status < 300) {
-                console.log('lol1');
-                window.location.search = ''
+                console.log('send ok');
             } else {
-                console.log('lol2');
+                console.log('send error');
             };
         })
         .catch(error => {
@@ -97,6 +96,10 @@ const send = throttle(500, function () {
         margin-top: -30px;
         margin-left: -15px;
         margin-right: -15px;
+
+        @media (max-width: $breakpoint-mobile) {
+            justify-content: flex-start;
+        }
     }
 
     &__item {
@@ -107,6 +110,21 @@ const send = throttle(500, function () {
         color: var(--text-color-black);
         flex-grow: 1;
         max-width: 50%;
+
+        @media (max-width: $breakpoint-mobile) {
+            width: 100%;
+            max-width: 100%;
+        }
+
+        &--range {
+            max-width: 66.66666%;
+            width: 66.66666%;
+        
+            @media (max-width: $breakpoint-mobile) {
+                max-width: 100%;
+                width: 100%;
+            }
+        }
     }
 
     &__submit {
@@ -115,6 +133,11 @@ const send = throttle(500, function () {
         width: 100%;
         padding-top: 17px !important;
         padding-bottom: 17px !important;
+
+        @media (max-width: $breakpoint-mobile) {
+            width: 100%;
+            max-width: 100%;
+        }
     }
 }
 </style>

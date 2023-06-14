@@ -9,7 +9,7 @@
     "preview": "vite preview"
   },
   "dependencies": {
-    "input-range-scss": "^1.5.3",
+    "gsap": "^3.12.1",
     "throttle-debounce": "^5.0.0",
     "vue": "^3.2.47"
   },

@@ -497,6 +497,11 @@ glob-parent@~5.1.2:
   dependencies:
     is-glob "^4.0.1"
 
+gsap@^3.12.1:
+  version "3.12.1"
+  resolved "https://registry.yarnpkg.com/gsap/-/gsap-3.12.1.tgz#e6482f336547cbab947e9f57071565bdce611f79"
+  integrity sha512-FXtb2YbBE9l8I9Pl5DFLpCMedaiMPztRlr0Ln0CMSnJn+pbTaeKlzgth8cLNPc7PzNwIZe+SEQiBBAWaBKJdVA==
+
 ieee754@^1.1.13:
   version "1.2.1"
   resolved "https://registry.yarnpkg.com/ieee754/-/ieee754-1.2.1.tgz#8eb7a10a63fff25d15a57b001586d177d1b0d352"
@@ -516,11 +521,6 @@ ini@~1.3.0:
   version "1.3.8"
   resolved "https://registry.yarnpkg.com/ini/-/ini-1.3.8.tgz#a29da425b48806f34767a4efce397269af28432c"
   integrity sha512-JV/yugV2uzW5iMRSiZAyDtQd+nxtUnjeLt0acNdw98kKLrvuRVyB80tsREOE7yvGVgalhZ6RNXCmEHkUKBKxew==
-
-input-range-scss@^1.5.3:
-  version "1.5.3"
-  resolved "https://registry.yarnpkg.com/input-range-scss/-/input-range-scss-1.5.3.tgz#aeb127b1d523f64ac0aed373f4ef679908176aa6"
-  integrity sha512-yI5bUp1kyOVHm6eKPiXjAOi7A0Gv2J8569J5uRwRamy2gD9nB6PWkxQTO+KK40UBvr24/HhADOzEQ5IV9BCSpQ==
 
 is-arrayish@^0.3.1:
   version "0.3.2"

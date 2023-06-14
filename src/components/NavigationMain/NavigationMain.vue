@@ -17,7 +17,8 @@
         font-weight: 600;
         line-height: 1.2;
         color: var(--text-color);
-        padding: 10px;
+        padding-top: 10px;
+        padding-bottom: 10px;
         margin-right: 40px;
         text-decoration: none;
         transition: color var(--transition);
