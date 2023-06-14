@@ -1,5 +1,5 @@
 <template>
-    <div class="navigation-mobile">
+    <div class="navigation-mobile" ref="navMobile">
         <div class="navigation-mobile__burger" @click="toggleDropdown">
             <div :class="{'line': true, 'line--1': true, 'open': isOpen}"></div>
             <div :class="{'line': true, 'line--2': true, 'open': isOpen}"></div>
@@ -7,23 +7,39 @@
         </div>
         <div v-if="isOpen" class="navigation-mobile__dropdown">
             <nav>
-            <a href="#business" class="navigation-mobile__link">Бизнес</a>
-            <a href="#about" class="navigation-mobile__link">О нас</a>
-            <a href="#prices" class="navigation-mobile__link">Цены</a>
-            <a href="#order" class="navigation-mobile__link">Оформить заказ</a>
+                <a href="#business" class="navigation-mobile__link">Бизнес</a>
+                <a href="#about" class="navigation-mobile__link">О нас</a>
+                <a href="#prices" class="navigation-mobile__link">Цены</a>
+                <a href="#order" class="navigation-mobile__link">Оформить заказ</a>
             </nav>
         </div>
     </div>
 </template>
 
 <script setup>
-import { ref } from 'vue';
+import { ref, onMounted, onUnmounted } from 'vue';
 
 const isOpen = ref(false);
+const navMobile = ref(null)
 
 const toggleDropdown = () => {
     isOpen.value = !isOpen.value;
+    document.querySelector('.header').classList.toggle('is-open')
 }
+
+const clickOutside = (e) => {
+    if ((!navMobile.value.contains(e.target) && navMobile.value !== e.target)) {
+        isOpen.value = false
+    }
+}
+
+onMounted(() => {
+    document.addEventListener('click', clickOutside)
+})
+
+onUnmounted(() => {
+    document.removeEventListener('click', clickOutside)
+})
 </script>
 
 <style lang="scss" scoped>
@@ -45,6 +61,8 @@ const toggleDropdown = () => {
         padding: 10px;
         z-index: 2;
         border-top: 1px solid var(--brand-color);
+        border-bottom-left-radius: 4px;
+        border-bottom-right-radius: 4px;
 
         @media screen and (max-width: $breakpoint-v-tablet) {
             padding-right: var(--token-grids-v-tablet-offset);

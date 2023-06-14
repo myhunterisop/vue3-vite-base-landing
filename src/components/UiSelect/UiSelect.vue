@@ -43,10 +43,6 @@ defineProps({
     options: {
         type: Array,
         default: () => []
-    },
-    required: {
-        type: Boolean,
-        default: false
     }
 })
 
@@ -57,11 +53,11 @@ const select = ref(null)
 const selectOption = (option) => {
     selectedOption.value = option;
     isDropdownVisible.value = false;
-};
+}
 
 const toggleDropdown = () => {
     isDropdownVisible.value = !isDropdownVisible.value;
-};
+}
 
 const clickOutside = (e) => {
     if ((!select.value.contains(e.target) && select.value !== e.target)) {

@@ -61,6 +61,7 @@ gsap.registerPlugin(ScrollTrigger)
 import { onMounted, nextTick } from 'vue';
 
 onMounted(() => {
+    // eslint-disable-next-line no-unused-vars
     window.addEventListener('scroll', e => {
         document.body.style.cssText += `--scrollTop: ${window.scrollY}px`
     })

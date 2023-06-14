@@ -3,8 +3,7 @@
         <div class="form__wrapper">
             <div class="form__item">
                 <ui-select
-                    placeholder="Выберите тип системы *"
-                    required
+                    placeholder="Выберите тип системы"
                     :options="[
                         {
                             'id': 1,
@@ -79,10 +78,10 @@ const send = throttle(500, function () {
                 console.log('send ok');
             } else {
                 console.log('send error');
-            };
+            }
         })
         .catch(error => {
-            console.log('lol error');
+            console.log(error);
         })
 })
 </script>

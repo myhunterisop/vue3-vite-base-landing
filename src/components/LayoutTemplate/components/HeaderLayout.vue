@@ -23,7 +23,7 @@ import NavigationMobile from '@/components/NavigationMobile/NavigationMobile.vue
     z-index: 3;
     top: 0;
     left: 0;
-    background: rgba(16, 16, 29, 0.9);
+    background: rgba(16, 16, 29, 0.95);
 
     &__wrapper {
         display: flex;
@@ -60,6 +60,10 @@ import NavigationMobile from '@/components/NavigationMobile/NavigationMobile.vue
         @media (max-width: $breakpoint-v-tablet) {
             display: flex;
         }
+    }
+
+    &.is-open {
+        background: rgb(16, 16, 29);
     }
 }
 </style>

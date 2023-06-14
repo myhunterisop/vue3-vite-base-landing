@@ -1,13 +1,13 @@
 <template>
     <section id="about">
-        <about />
+        <about-section />
     </section>
     <section id="order">
-        <order />
+        <order-section />
     </section>
 </template>
 
 <script setup>
-import About from './components/About.vue'
-import Order from './components/Order.vue'
+import AboutSection from './components/AboutSection.vue'
+import OrderSection from './components/OrderSection.vue'
 </script>
